@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Log In - AskPupkin{% endblock %}
+
+{% block content %}
+<div class="auth-form">
+    <h2 class="auth-form__title">Log In</h2>
+    
+    <div class="alert alert--error">
+        Sorry, wrong password!
+    </div>
+    
+    <form class="form form--auth">
+        <div class="form__group">
+            <label for="login" class="form__label">Login</label>
+            <input type="text" id="login" class="form__input" placeholder="Enter your login here" maxlength="30">
+        </div>
+        
+        <div class="form__group">
+            <label for="password" class="form__label">Password</label>
+            <input type="password" id="password" class="form__input" placeholder="**********" maxlength="30">
+        </div>
+        
+        <button type="submit" class="form__submit">Log in!</button>
+        
+        <div class="auth-form__footer">
+            <a href="{% url 'signup' %}" class="auth-form__link">create new account</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

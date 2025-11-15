@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'images/newspaper.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>{% block title %}AskPupkin{% endblock %}</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="{% url 'index' %}" style="text-decoration: none; color: inherit;">AskPupkin</a>
+        </div>
+        <div class="header__search">
+            <input type="text" placeholder="Search">
+            <button class="search-button">Search</button>
+        </div>
+        <div class="header__auth">
+            {% block auth_buttons %}
+            <a href="{% url 'login' %}" class="auth-button login">log in</a>
+            <a href="{% url 'signup' %}" class="auth-button register">register</a>
+            {% endblock %}
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="main-container">
+            {% block content %}{% endblock %}
+        </div>
+        
+        <aside class="aside">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Popular Tags</h3>
+                <div class="tags">
+                    <a href="{% url 'tag' 'perl' %}" class="tag popular-tag">perl</a>
+                    <a href="{% url 'tag' 'python' %}" class="tag popular-tag">python</a>
+                    <a href="{% url 'tag' 'TechnoPark' %}" class="tag popular-tag">TechnoPark</a>
+                    <a href="{% url 'tag' 'MySQL' %}" class="tag popular-tag">MySQL</a>
+                    <a href="{% url 'tag' 'django' %}" class="tag popular-tag">django</a>
+                    <a href="{% url 'tag' 'Mail.Ru' %}" class="tag popular-tag">Mail.Ru</a>
+                    <a href="{% url 'tag' 'Voloshin' %}" class="tag popular-tag">Voloshin</a>
+                    <a href="{% url 'tag' 'Firefox' %}" class="tag popular-tag">Firefox</a>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Best Members</h3>
+                <div class="members-list">
+                    <a href="#" class="member-link">Mr. Freeman</a>
+                    <a href="#" class="member-link">Dr. House</a>
+                    <a href="#" class="member-link">Bender</a>
+                    <a href="#" class="member-link">Queen Victoria</a>
+                    <a href="#" class="member-link">V. Pupkin</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>

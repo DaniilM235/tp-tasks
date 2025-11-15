@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}AskPupkin{% endblock %}
+
+{% block content %}
+<section class="questions__root">
+    <div class="questions__title">
+        <h2>New Questions</h2>
+        <a href="{% url 'hot' %}">Hot Questions</a>
+    </div>
+    
+    <div class="questions-list">
+        {% for question in new_questions %}
+        <div class="question">
+            <div class="question__content">
+                <div class="question__aside">
+                    <img src="{% static 'images/avatar.png' %}" alt="avatar" class="question__avatar">
+                    <div class="question__rating">
+                        <button class="rating-btn up">+</button>
+                        <span class="rating-value">{{ question.rating }}</span>
+                        <button class="rating-btn down">-</button>
+                    </div>
+                </div>
+                <div class="question__main">
+                    <h3 class="question__title">
+                        <a href="{% url 'question' question.id %}">{{ question.title }}</a>
+                    </h3>
+                    <p class="question__text">{{ question.text|truncatewords:30 }}</p>
+                    <div class="question__meta">
+                        <a href="{% url 'question' question.id %}" class="answers-count">answers ({{ question.answers.count }})</a>
+                        <div class="question__tags">
+                            <span class="tags-label">Tags:</span>
+                            {% for tag in question.tags.all %}
+                            <a href="{% url 'tag' tag.name %}" class="tag">{{ tag.name }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    {% include 'core/pagination.html' with page_obj=page_obj %}
+</section>
+{% endblock %}

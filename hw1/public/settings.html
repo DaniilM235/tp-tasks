@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Settings - AskPupkin</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">AskPupkin</div>
+        <div class="header__search">
+            <input type="text" placeholder="Search">
+            <button class="search-button">Search</button>
+        </div>
+        <div class="header__auth">
+            <div class="user-menu">
+                <span class="user-name">Dr. Pepper</span>
+                <div class="user-dropdown">
+                    <a href="#" class="user-dropdown__item">settings</a>
+                    <a href="#" class="user-dropdown__item">log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="main-container">
+            <div class="settings-form">
+                <h2 class="settings-form__title">Settings: Dr. Pepper</h2>
+                
+                <form class="form">
+                    <div class="form__group">
+                        <label for="login" class="form__label">Login</label>
+                        <input type="text" id="login" class="form__input" value="dr_pepper" maxlength="30">
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="email" class="form__label">Email</label>
+                        <input type="email" id="email" class="form__input" value="drpepper@mail.ru" maxlength="100">
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="nickname" class="form__label">NickName</label>
+                        <input type="text" id="nickname" class="form__input" value="Dr. Pepper" maxlength="30">
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="avatar" class="form__label">Upload avatar</label>
+                        <div class="avatar-upload">
+                            <div class="avatar-upload__preview">
+                                <img src="../static/img/avatar.jpg" alt="Current avatar" class="avatar-upload__image">
+                            </div>
+                            <div class="file-upload">
+                                <input type="file" id="avatar" class="file-upload__input">
+                                <label for="avatar" class="file-upload__label">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="form__submit">Save</button>
+                </form>
+            </div>
+        </div>
+        
+        <aside class="aside">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Popular Tags</h3>
+                <div class="tags">
+                    <a href="#" class="tag popular-tag">perl</a>
+                    <a href="#" class="tag popular-tag">python</a>
+                    <a href="#" class="tag popular-tag">TechnoPark</a>
+                    <a href="#" class="tag popular-tag">MySQL</a>
+                    <a href="#" class="tag popular-tag">django</a>
+                    <a href="#" class="tag popular-tag">Mail.Ru</a>
+                    <a href="#" class="tag popular-tag">Voloshin</a>
+                    <a href="#" class="tag popular-tag">Firefox</a>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Best Members</h3>
+                <div class="members-list">
+                    <a href="#" class="member-link">Mr. Freeman</a>
+                    <a href="#" class="member-link">Dr. House</a>
+                    <a href="#" class="member-link">Bender</a>
+                    <a href="#" class="member-link">Queen Victoria</a>
+                    <a href="#" class="member-link">V. Pupkin</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>How to build a moon park? - AskPupkin</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">AskPupkin</div>
+        <div class="header__search">
+            <input type="text" placeholder="Search">
+            <button class="search-button">Search</button>
+        </div>
+        <div class="header__auth">
+            <button class="auth-button login">log in</button>
+            <button class="auth-button register">register</button>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="main-container">
+            <!-- Question -->
+            <div class="question question--large">
+                <div class="question__content">
+                    <div class="question__aside">
+                        <img src="../static/img/avatar.jpg" alt="avatar" class="question__avatar">
+                        <div class="question__rating">
+                            <button class="rating-btn up">+</button>
+                            <span class="rating-value">5</span>
+                            <button class="rating-btn down">-</button>
+                        </div>
+                    </div>
+                    <div class="question__main">
+                        <h1 class="question__title">How to build a moon park?</h1>
+                        <p class="question__text">Lorem ipsum — dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                        <div class="question__tags">
+                            <span class="tags-label">Tags:</span>
+                            <a href="#" class="tag">black-jack</a>
+                            <a href="#" class="tag">bender</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Answers -->
+            <div class="answers-section">
+                <h2 class="answers-title">Answers</h2>
+                
+                <!-- Answer 1 -->
+                <div class="answer">
+                    <div class="answer__content">
+                        <div class="answer__aside">
+                            <img src="../static/img/avatar.jpg" alt="avatar" class="answer__avatar">
+                            <div class="answer__rating">
+                                <button class="rating-btn up">+</button>
+                                <span class="rating-value">15</span>
+                                <button class="rating-btn down">-</button>
+                            </div>
+                        </div>
+                        <div class="answer__main">
+                            <p class="answer__text">First of all I would like to thank you for the invitation to participate in such a ... Russia is the huge territory which in many respects needs to be render habitable.</p>
+                            <div class="answer__correct">
+                                <input type="checkbox" id="correct1" checked class="correct-checkbox">
+                                <label for="correct1" class="correct-label">Correct!</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Answer 2 -->
+                <div class="answer">
+                    <div class="answer__content">
+                        <div class="answer__aside">
+                            <img src="../static/img/avatar.jpg" alt="avatar" class="answer__avatar">
+                            <div class="answer__rating">
+                                <button class="rating-btn up">+</button>
+                                <span class="rating-value">8</span>
+                                <button class="rating-btn down">-</button>
+                            </div>
+                        </div>
+                        <div class="answer__main">
+                            <p class="answer__text">First of all I would like to thank you for the invitation to participate in such a ... Russia is the huge territory which in many respects needs to be render habitable.</p>
+                            <div class="answer__correct">
+                                <input type="checkbox" id="correct2" class="correct-checkbox">
+                                <label for="correct2" class="correct-label">Correct!</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Your Answer Form -->
+            <div class="answer-form">
+                <h3 class="answer-form__title">Your Answer</h3>
+                <form class="form">
+                    <div class="form__group">
+                        <textarea class="form__textarea" placeholder="Enter your answer here" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="form__submit">Answer</button>
+                </form>
+            </div>
+
+            <!-- Pagination -->
+            <div class="questions__pagination">
+                <a href="#" class="questions__pagination__item active">1</a>
+                <a href="#" class="questions__pagination__item">2</a>
+                <a href="#" class="questions__pagination__item">3</a>
+                <a href="#" class="questions__pagination__item">Next</a>
+            </div>
+        </div>
+        
+        <aside class="aside">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Popular Tags</h3>
+                <div class="tags">
+                    <a href="#" class="tag popular-tag">perl</a>
+                    <a href="#" class="tag popular-tag">python</a>
+                    <a href="#" class="tag popular-tag">TechnoPark</a>
+                    <a href="#" class="tag popular-tag">MySQL</a>
+                    <a href="#" class="tag popular-tag">django</a>
+                    <a href="#" class="tag popular-tag">Mail.Ru</a>
+                    <a href="#" class="tag popular-tag">Voloshin</a>
+                    <a href="#" class="tag popular-tag">Firefox</a>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Best Members</h3>
+                <div class="members-list">
+                    <a href="#" class="member-link">Mr. Freeman</a>
+                    <a href="#" class="member-link">Dr. House</a>
+                    <a href="#" class="member-link">Bender</a>
+                    <a href="#" class="member-link">Queen Victoria</a>
+                    <a href="#" class="member-link">V. Pupkin</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>

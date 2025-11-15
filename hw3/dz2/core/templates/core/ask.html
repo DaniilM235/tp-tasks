@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Ask Question - AskPupkin{% endblock %}
+
+{% block auth_buttons %}
+<div class="user-menu">
+    <span class="user-name">Dr. Pepper</span>
+    <div class="user-dropdown">
+        <a href="{% url 'settings' %}" class="user-dropdown__item">settings</a>
+        <a href="#" class="user-dropdown__item">log out</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="ask-form">
+    <h2 class="ask-form__title">New Question</h2>
+    
+    <form class="form">
+        <div class="form__group">
+            <label for="title" class="form__label">Title</label>
+            <input type="text" id="title" class="form__input" placeholder="How to build a moon park?" maxlength="100">
+            <div class="form__help">Be specific and imagine you're asking a question to another person.</div>
+        </div>
+        
+        <div class="form__group">
+            <label for="text" class="form__label">Text</label>
+            <textarea id="text" class="form__textarea" placeholder="Really, how? Have no idea about it" rows="5"></textarea>
+            <div class="form__help">Include all the information someone would need to answer your question.</div>
+        </div>
+        
+        <div class="form__group">
+            <label for="tags" class="form__label">Tags</label>
+            <input type="text" id="tags" class="form__input" placeholder="moon, park, puzzle" maxlength="100">
+            <div class="form__help">Add up to 5 tags to describe what your question is about.</div>
+        </div>
+        
+        <button type="submit" class="form__submit form__submit--large">ASK!</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Settings - AskPupkin{% endblock %}
+
+{% block auth_buttons %}
+<div class="user-menu">
+    <span class="user-name">Dr. Pepper</span>
+    <div class="user-dropdown">
+        <a href="{% url 'settings' %}" class="user-dropdown__item">settings</a>
+        <a href="#" class="user-dropdown__item">log out</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="settings-form">
+    <h2 class="settings-form__title">Settings: Dr. Pepper</h2>
+    
+    <form class="form">
+        <div class="form__group">
+            <label for="login" class="form__label">Login</label>
+            <input type="text" id="login" class="form__input" value="dr_pepper" maxlength="30">
+        </div>
+        
+        <div class="form__group">
+            <label for="email" class="form__label">Email</label>
+            <input type="email" id="email" class="form__input" value="drpepper@mail.ru" maxlength="100">
+        </div>
+        
+        <div class="form__group">
+            <label for="nickname" class="form__label">NickName</label>
+            <input type="text" id="nickname" class="form__input" value="Dr. Pepper" maxlength="30">
+        </div>
+        
+        <div class="form__group">
+            <label for="avatar" class="form__label">Upload avatar</label>
+            <div class="avatar-upload">
+                <div class="avatar-upload__preview">
+                    <img src="{% static 'img/avatar.jpg' %}" alt="Current avatar" class="avatar-upload__image">
+                </div>
+                <div class="file-upload">
+                    <input type="file" id="avatar" class="file-upload__input">
+                    <label for="avatar" class="file-upload__label">Choose file</label>
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit" class="form__submit">Save</button>
+    </form>
+</div>
+{% endblock %}

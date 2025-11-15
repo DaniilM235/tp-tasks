@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{ question.title }} - AskPupkin{% endblock %}
+
+{% block content %}
+
+<div class="question question--large">
+    <div class="question__content">
+        <div class="question__aside">
+            <img src="{% static 'images/avatar.png' %}" alt="avatar" class="question__avatar">
+            <div class="question__rating">
+                <button class="rating-btn up">+</button>
+                <span class="rating-value">{{ question.rating }}</span>
+                <button class="rating-btn down">-</button>
+            </div>
+        </div>
+        <div class="question__main">
+            <h1 class="question__title">{{ question.title }}</h1>
+            <p class="question__text">{{ question.text }}</p>
+            <div class="question__tags">
+                <span class="tags-label">Tags:</span>
+                {% for tag in question.tags.all %}
+                <a href="{% url 'tag' tag.name %}" class="tag">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="answers-section">
+    <h2 class="answers-title">Answers ({{ answers.count }})</h2>
+    
+    {% for answer in answers %}
+    <div class="answer">
+        <div class="answer__content">
+            <div class="answer__aside">
+                <img src="{% static 'images/avatar.png' %}" alt="avatar" class="answer__avatar">
+                <div class="answer__rating">
+                    <button class="rating-btn up">+</button>
+                    <span class="rating-value">{{ answer.rating }}</span>
+                    <button class="rating-btn down">-</button>
+                </div>
+            </div>
+            <div class="answer__main">
+                <p class="answer__text">{{ answer.text }}</p>
+                <div class="answer__correct">
+                    <input type="checkbox" id="correct{{ answer.id }}" {% if answer.is_correct %}checked{% endif %} class="correct-checkbox" disabled>
+                    <label for="correct{{ answer.id }}" class="correct-label">Correct!</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="answer-form">
+    <h3 class="answer-form__title">Your Answer</h3>
+    <form class="form">
+        <div class="form__group">
+            <textarea class="form__textarea" placeholder="Enter your answer here" rows="5"></textarea>
+        </div>
+        <button type="submit" class="form__submit">Answer</button>
+    </form>
+</div>
+
+{% include 'core/pagination.html' with page_obj=answers %}
+{% endblock %}

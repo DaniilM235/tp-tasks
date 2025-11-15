@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Registration - AskPupkin{% endblock %}
+
+{% block content %}
+<div class="auth-form">
+    <h2 class="auth-form__title">Registration</h2>
+    
+    <div class="alert alert--error">
+        Sorry, this email address already registered!
+    </div>
+    
+    <form class="form form--auth">
+        <div class="form__group">
+            <label for="login" class="form__label">Login</label>
+            <input type="text" id="login" class="form__input" placeholder="dr_pepper" maxlength="30">
+        </div>
+        
+        <div class="form__group">
+            <label for="email" class="form__label">Email</label>
+            <input type="email" id="email" class="form__input" placeholder="drpepper@mail.ru" maxlength="100">
+        </div>
+        
+        <div class="form__group">
+            <label for="nickname" class="form__label">NickName</label>
+            <input type="text" id="nickname" class="form__input" placeholder="Dr. Pepper" maxlength="30">
+        </div>
+        
+        <div class="form__group">
+            <label for="password" class="form__label">Password</label>
+            <input type="password" id="password" class="form__input" placeholder="**********" maxlength="30">
+        </div>
+        
+        <div class="form__group">
+            <label for="repeatPassword" class="form__label">Repeat password</label>
+            <input type="password" id="repeatPassword" class="form__input" placeholder="**********" maxlength="30">
+        </div>
+        
+        <div class="form__group">
+            <label for="avatar" class="form__label">Upload avatar</label>
+            <div class="file-upload">
+                <input type="file" id="avatar" class="file-upload__input">
+                <label for="avatar" class="file-upload__label">Choose file</label>
+                <span class="file-upload__text">No file chosen</span>
+            </div>
+        </div>
+        
+        <button type="submit" class="form__submit">Register!</button>
+    </form>
+</div>
+{% endblock %}
